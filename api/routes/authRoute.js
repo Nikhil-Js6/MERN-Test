@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const verify = require("../verifyToken");
 
+const HASHING_SECRET = '9e42e429fe34d87a78eab640e6ffd83445f50300738f0';
 
 // Register
 
@@ -32,7 +33,7 @@ router.post('/login', async (req, res) => {
             {
                 id: user._id,
             },
-                process.env.HASHING_SECRET,
+                HASHING_SECRET,
                 { expiresIn: "1d" }
             );
             res.status(200).json(accessToken);
