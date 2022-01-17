@@ -16,7 +16,14 @@ export default function Profile({ token }) {
             setUser(res.data);
         }
         getUser();
-    });
+    }, [token]);
+
+    const handleLogout = () => {
+        localStorage.removeItem("User");
+        setUser(null);
+        window.location.replace('/login');
+    }
+
     return (
         <div className='profile'>
             <div className='profileWrapper'>
@@ -40,6 +47,7 @@ export default function Profile({ token }) {
                     </div>
                 </div>            
             </div>
+            <button className='logout' onClick={handleLogout}>Logout</button>
         </div>
     )
 }
