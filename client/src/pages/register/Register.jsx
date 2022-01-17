@@ -29,6 +29,10 @@ export default function Register() {
         }
     }
 
+    const handleLogin = () => {
+        window.location.replace("/login");
+    }
+
     return (
         <div className='register'>
             <div className='formWrapper'>
@@ -43,6 +47,7 @@ export default function Register() {
                     <button type='submit'>Submit</button>
                 </form>
             </div>
+            <button className='login' onClick={handleLogin}>Login</button>
         </div>
     )
 }
