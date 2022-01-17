@@ -22,16 +22,21 @@ export default function Login({ setToken }) {
         }
     }
 
+    const handleRegister = () => {
+        window.location.replace("/register");
+    }
+
     return (
         <div className='login'>
             <div className='formWrapper'>
                 <h1>Login</h1>
-                <form className='registerForm' onSubmit={(e) => handleSubmit(e)}>
+                <form className='loginForm' onSubmit={(e) => handleSubmit(e)}>
                     <input type="email" placeholder='Email' ref={emailRef}/>
                     <input type="password" placeholder='password' ref={passwordRef}/>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
+            <button className='login' onClick={handleRegister}>Register</button>
         </div>
     )
 }
