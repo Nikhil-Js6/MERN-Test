@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
 
-   const [token, setToken] = useState(localStorage.getItem("User"));
+   const [token, setToken] = useState(localStorage.getItem("Token"));
 
    return (
       <div className='app'>
