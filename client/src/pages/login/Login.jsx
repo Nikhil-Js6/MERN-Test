@@ -15,7 +15,7 @@ export default function Login({ setToken }) {
         }
         try {
             const res = await axios.post("http://localhost:3300/api/login", newUser);
-            localStorage.setItem("User", res.data);
+            localStorage.setItem("Token", res.data);
             setToken(res.data);
         } catch (err) {
             console.log(err);
